@@ -1,4 +1,4 @@
-opcio = int(input("Tria una opció (1 o 2): "))
+opcio = int(input("""ia una opció (1 o 2): "))
     1. suma
     2. multiplicació
     3. resta
