@@ -8,5 +8,5 @@ def majoredat(edat):
 
 edat = int(input("Introdueix la teva edat: "))
 majoredat(edat)
- edat = int(input("escriu la teva edat: "))
+edat = int(input("escriu la teva edat: "))
 majoredat(edat)
