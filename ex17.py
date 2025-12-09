@@ -1,4 +1,6 @@
+"""
 Defineix una funcio..
+"""
 
 
 

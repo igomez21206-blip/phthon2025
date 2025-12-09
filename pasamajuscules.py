@@ -1,34 +1,50 @@
-"""
-llegir el nunmero de frases i ses frases
-a d¡cada frase substituir les consonants per una mauscula
-imprimir ses frases
-"""
-
-def llegir_frses(n):
- #prec: donat un número
- # post: retorna una llista amb n-element llegits del teclat
-    
+def llegir_frases(n):
+    """
+    Precondició: n és un número enter
+    Postcondició: retorna una llista amb n frases llegides del teclat
+    """
     llista = []
-    for e in range(n):
-        llista.append(input(""))
+    for i in range(n):
+        frase = input(f"Introdueix la frase {i+1}: ")
+        llista.append(frase)
     return llista
 
-def escriure_frses(llista):
-#prec: donada una llista de frases
-#post: imprimeix cada element de la llista
-    for e in llista:
-        print(e)
+def convertir_majuscules(frase):
+    """
+    Precondició: frase és una cadena de text
+    Postcondició: retorna la frase amb les consonants en majúscula
+    """
+    vocals = "aeiouAEIOU"
+    resultat = ""
+    
+    for lletra in frase:
+        if lletra.isalpha() and lletra not in vocals:  # consonant
+            resultat += lletra.upper()
+        else:
+            resultat += lletra
+    return resultat
 
-def convertir_majuscules(s):
-    vocal="aeiouAEIOU"
-    for i.e in enumerate(llista):
-        if e not in vocal:
-            llista[i]=e.upper()
-    return "".join(llista)
+def escriure_frases(llista):
+    """
+    Precondició: llista és una llista de frases
+    Postcondició: imprimeix cada frase de la llista
+    """
+    print("\nFrases modificades:")
+    for frase in llista:
+        print(frase)
 
-#programa principal
-n= int(input(""))
+# -----------------------------
+# Programa principal
+# -----------------------------
+
+# Llegir el número de frases
+n = int(input("Introdueix el nombre de frases: "))
+
+# Llegir les frases
 frases = llegir_frases(n)
-for i, +e in enumerate llista:
-    llista(i)=convertir_majuscules(e)
-escriure_frases(llista)
+
+# Convertir les consonants en majúscula per cada frase
+frases_modificades = [convertir_majuscules(frase) for frase in frases]
+
+# Imprimir les frases modificades
+escriure_frases(frases_modificades)
